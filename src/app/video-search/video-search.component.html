@@ -1,0 +1,10 @@
+<div>
+    <input [(ngModel)]="query" palaceholder="Buscar Videos"/>
+    <button (click)="search()">Buscar</button>
+</div>
+<div *ngFor="let video of videos">
+    <h3>{{ video.snippet.title }}</h3>
+    <iframe width="560" height="315" [src]="getSafeUrl(video.id.videoId)"
+    frameborder="0" allowfullscreen></iframe>
+    <p>{{ video.snippet.description }}</p>
+</div>
